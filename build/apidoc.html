@@ -1,0 +1,750 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >kappa (v1.0.0-rc.14)</a>
+</h1>
+<h4>A hierarchical npm-registry proxy to make private registries easier. (Based on npm-delegate by @jden)</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.kappa">module kappa</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.iterator">
+            function <span class="apidocSignatureSpan">kappa.</span>iterator
+            <span class="apidocSignatureSpan">(items, factory)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">kappa.</span>iterator.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">kappa.</span>proxy</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">kappa.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.kappa.iterator">module kappa.iterator</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.iterator.iterator">
+            function <span class="apidocSignatureSpan">kappa.</span>iterator
+            <span class="apidocSignatureSpan">(items, factory)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.kappa.iterator.prototype">module kappa.iterator.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.iterator.prototype.next">
+            function <span class="apidocSignatureSpan">kappa.iterator.prototype.</span>next
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.kappa.proxy">module kappa.proxy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.proxy.create">
+            function <span class="apidocSignatureSpan">kappa.proxy.</span>create
+            <span class="apidocSignatureSpan">(item, index, items)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.kappa.util">module kappa.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.util.hostInfo">
+            function <span class="apidocSignatureSpan">kappa.util.</span>hostInfo
+            <span class="apidocSignatureSpan">(request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.util.init">
+            function <span class="apidocSignatureSpan">kappa.util.</span>init
+            <span class="apidocSignatureSpan">(dest, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.util.isValidHeader">
+            function <span class="apidocSignatureSpan">kappa.util.</span>isValidHeader
+            <span class="apidocSignatureSpan">(header)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.util.map">
+            function <span class="apidocSignatureSpan">kappa.util.</span>map
+            <span class="apidocSignatureSpan">(obj, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.util.maybe">
+            function <span class="apidocSignatureSpan">kappa.util.</span>maybe
+            <span class="apidocSignatureSpan">(dest, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.util.namespace">
+            function <span class="apidocSignatureSpan">kappa.util.</span>namespace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.util.ns">
+            function <span class="apidocSignatureSpan">kappa.util.</span>ns
+            <span class="apidocSignatureSpan">(dest, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.util.rewriter">
+            function <span class="apidocSignatureSpan">kappa.util.</span>rewriter
+            <span class="apidocSignatureSpan">(host, registry)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.util.suffix">
+            function <span class="apidocSignatureSpan">kappa.util.</span>suffix
+            <span class="apidocSignatureSpan">(str, chars)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.util.sum">
+            function <span class="apidocSignatureSpan">kappa.util.</span>sum
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.util.transform">
+            function <span class="apidocSignatureSpan">kappa.util.</span>transform
+            <span class="apidocSignatureSpan">(obj, prop, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.kappa.util.tryParse">
+            function <span class="apidocSignatureSpan">kappa.util.</span>tryParse
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.kappa" id="apidoc.module.kappa">module kappa</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.iterator" id="apidoc.element.kappa.iterator">
+        function <span class="apidocSignatureSpan">kappa.</span>iterator
+        <span class="apidocSignatureSpan">(items, factory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Iterator(items, factory) {
+    this._items = items;
+    this._factory = factory;
+    this._current = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.kappa.iterator" id="apidoc.module.kappa.iterator">module kappa.iterator</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.iterator.iterator" id="apidoc.element.kappa.iterator.iterator">
+        function <span class="apidocSignatureSpan">kappa.</span>iterator
+        <span class="apidocSignatureSpan">(items, factory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Iterator(items, factory) {
+    this._items = items;
+    this._factory = factory;
+    this._current = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.kappa.iterator.prototype" id="apidoc.module.kappa.iterator.prototype">module kappa.iterator.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.iterator.prototype.next" id="apidoc.element.kappa.iterator.prototype.next">
+        function <span class="apidocSignatureSpan">kappa.iterator.prototype.</span>next
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">next = function () {
+    var item;
+
+    if (this.complete) {
+        throw new Error(&#x27;StopIteration&#x27;);
+    }
+
+    item = this._items[this._current];
+    this._factory &#x26;&#x26; (item = this._factory.create(item, this._current, this._items));
+    this._current += 1;
+
+    return item;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.kappa.proxy" id="apidoc.module.kappa.proxy">module kappa.proxy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.proxy.create" id="apidoc.element.kappa.proxy.create">
+        function <span class="apidocSignatureSpan">kappa.proxy.</span>create
+        <span class="apidocSignatureSpan">(item, index, items)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (item, index, items) {
+
+    return Object.create(proto, {
+
+        registry: {
+            value: item,
+            enumerable: true
+        },
+
+        index: {
+            value: index,
+            enumerable: true
+        },
+
+        registries: {
+            value: items,
+            enumerable: true
+        },
+
+        onComplete: {
+            value: undefined,
+            writable: true,
+            enumerable: true
+        }
+
+    });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        var item;
+
+        if (this.complete) {
+            throw new Error(&#x27;StopIteration&#x27;);
+        }
+
+        item = this._items[this._current];
+        this._factory &#x26;&#x26; (item = this._factory.<span class="apidocCodeKeywordSpan">create</span>(item, this._current,
+this._items));
+        this._current += 1;
+
+        return item;
+    }
+
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.kappa.util" id="apidoc.module.kappa.util">module kappa.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.util.hostInfo" id="apidoc.element.kappa.util.hostInfo">
+        function <span class="apidocSignatureSpan">kappa.util.</span>hostInfo
+        <span class="apidocSignatureSpan">(request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hostInfo(request) {
+    var protocol, uri;
+
+    protocol = request.headers[&#x27;x-forwarded-proto&#x27;] || request.server.info.protocol;
+    protocol = exports.suffix(protocol, &#x27;:&#x27;);
+    uri = url.parse(protocol + &#x27;//&#x27; + request.info.host);
+
+    return {
+        &#x27;protocol&#x27;: uri.protocol,
+        &#x27;hostname&#x27;: uri.hostname,
+        &#x27;port&#x27;: uri.port
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Rewrite tarball URLs to kappa so that everything comes through kappa.
+// This is useful for metrics, logging, white listing, etc.
+plugin.ext(&#x27;onPostHandler&#x27;, function (request, next) {
+    var response, rewrite, host, registry;
+
+    response = request.response;
+    if (!response.isBoom &#x26;&#x26; response.variety === &#x27;plain&#x27;) {
+        host = util.<span class="apidocCodeKeywordSpan">hostInfo</span>(request);
+        registry = Url.parse(response.headers[&#x27;x-registry&#x27;] || &#x27;&#x27;);
+        rewrite = util.rewriter(host, registry);
+        util.transform(response.source, &#x27;tarball&#x27;, rewrite);
+    }
+
+    next();
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.util.init" id="apidoc.element.kappa.util.init">
+        function <span class="apidocSignatureSpan">kappa.util.</span>init
+        <span class="apidocSignatureSpan">(dest, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function init(dest, fn) {
+    return exports.ns(dest, function (obj, prop) {
+        obj[prop] = (typeof obj[prop] !== &#x27;undefined&#x27;) ? obj[prop] : 0;
+        fn(obj, prop);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.util.isValidHeader" id="apidoc.element.kappa.util.isValidHeader">
+        function <span class="apidocSignatureSpan">kappa.util.</span>isValidHeader
+        <span class="apidocSignatureSpan">(header)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isValidHeader(header) {
+    return !~INVALID_HEADERS.indexOf(header);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.util.map" id="apidoc.element.kappa.util.map">
+        function <span class="apidocSignatureSpan">kappa.util.</span>map
+        <span class="apidocSignatureSpan">(obj, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function map(obj, fn) {
+    var dest = {};
+    Object.keys(obj).forEach(function (prop) {
+        var value = obj[prop];
+        if (typeof value === &#x27;object&#x27;) {
+            dest[prop] = map(value, fn);
+        } else {
+            dest[prop] = fn(value);
+        }
+    });
+    return dest;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var defaults = require(&#x27;./config/defaults&#x27;);
+
+
+exports.register = function register(plugin, options, next) {
+var settings, read, write, vhost, logger;
+
+settings = Hoek.applyToDefaults(defaults, options);
+settings.paths = settings.paths.<span class="apidocCodeKeywordSpan">map</span>(function (path) {
+    return util.suffix(path, &#x27;/&#x27;);
+});
+
+read = delegate.createHandler(settings.paths);
+write = delegate.createHandler(settings.paths.slice(0, 1));
+vhost = settings.vhost;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.util.maybe" id="apidoc.element.kappa.util.maybe">
+        function <span class="apidocSignatureSpan">kappa.util.</span>maybe
+        <span class="apidocSignatureSpan">(dest, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function maybe(dest, fn) {
+    return exports.ns(dest, function (obj, name) {
+        if (obj[name] !== undefined) {
+            fn(obj, name);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.util.namespace" id="apidoc.element.kappa.util.namespace">
+        function <span class="apidocSignatureSpan">kappa.util.</span>namespace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function namespace() {
+    var args, dest, prop;
+
+    args = clone(arguments);
+    dest = args.shift();
+
+    while (args.length) {
+        prop = args.shift();
+        dest = dest[prop] || (dest[prop] = {});
+    }
+
+    return dest;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.util.ns" id="apidoc.element.kappa.util.ns">
+        function <span class="apidocSignatureSpan">kappa.util.</span>ns
+        <span class="apidocSignatureSpan">(dest, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ns(dest, fn) {
+    return function (name) {
+        var props, obj;
+
+        props = name.split(&#x27;:&#x27;);
+        props.unshift(dest);
+        name = props.pop();
+
+        obj = exports.namespace.apply(null, props);
+        fn(obj, name);
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * an object hierarchy exists prior to passing it to the
+ * provided callback. If one doesn&#x27;t exists it is created.
+ * @param dest
+ * @param fn
+ * @returns {*}
+ */
+exports.init = function init(dest, fn) {
+    return exports.<span class="apidocCodeKeywordSpan">ns</span>(dest, function (obj, prop) {
+        obj[prop] = (typeof obj[prop] !== &#x27;undefined&#x27;) ? obj[prop] : 0;
+        fn(obj, prop);
+    });
+};
+
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.util.rewriter" id="apidoc.element.kappa.util.rewriter">
+        function <span class="apidocSignatureSpan">kappa.util.</span>rewriter
+        <span class="apidocSignatureSpan">(host, registry)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rewriter(host, registry) {
+    return function rewrite(path) {
+        if (typeof path === &#x27;string&#x27;) {
+            path = url.parse(path);
+            path.pathname = path.pathname.replace(registry.pathname, &#x27;&#x27;) || &#x27;/&#x27;;
+            path.protocol = host.protocol;
+            path.hostname = host.hostname;
+            path.port = host.port;
+            path.host = undefined;
+            path = path.format();
+        }
+        return path;
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    plugin.ext(&#x27;onPostHandler&#x27;, function (request, next) {
+        var response, rewrite, host, registry;
+
+        response = request.response;
+        if (!response.isBoom &#x26;&#x26; response.variety === &#x27;plain&#x27;) {
+            host = util.hostInfo(request);
+            registry = Url.parse(response.headers[&#x27;x-registry&#x27;] || &#x27;&#x27;);
+            rewrite = util.<span class="apidocCodeKeywordSpan">rewriter</span>(host, registry);
+            util.transform(response.source, &#x27;tarball&#x27;, rewrite);
+        }
+
+        next();
+    });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.util.suffix" id="apidoc.element.kappa.util.suffix">
+        function <span class="apidocSignatureSpan">kappa.util.</span>suffix
+        <span class="apidocSignatureSpan">(str, chars)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function suffix(str, chars) {
+    if (typeof(str) === &#x27;string&#x27; &#x26;&#x26; typeof(chars) === &#x27;string&#x27;) {
+        return str.slice(-chars.length) === chars ? str : str + chars;
+    }
+    return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+exports.register = function register(plugin, options, next) {
+var settings, read, write, vhost, logger;
+
+settings = Hoek.applyToDefaults(defaults, options);
+settings.paths = settings.paths.map(function (path) {
+    return util.<span class="apidocCodeKeywordSpan">suffix</span>(path, &#x27;/&#x27;);
+});
+
+read = delegate.createHandler(settings.paths);
+write = delegate.createHandler(settings.paths.slice(0, 1));
+vhost = settings.vhost;
+
+// GETs always get proxied
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.util.sum" id="apidoc.element.kappa.util.sum">
+        function <span class="apidocSignatureSpan">kappa.util.</span>sum
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sum(obj) {
+    if (typeof obj !== &#x27;object&#x27;) {
+        throw new TypeError(&#x22;sum called on non-object&#x22;);
+    }
+    return Object.keys(obj).reduce(function (prev, curr) {
+        return prev + obj[curr].length;
+    }, 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.util.transform" id="apidoc.element.kappa.util.transform">
+        function <span class="apidocSignatureSpan">kappa.util.</span>transform
+        <span class="apidocSignatureSpan">(obj, prop, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function transform(obj, prop, fn) {
+    if (typeof obj !== &#x27;object&#x27; || obj === null) {
+        return;
+    }
+
+    Object.keys(obj).forEach(function (key) {
+        if (key === prop) {
+            obj[key] = fn(obj[key]);
+        } else {
+            transform(obj[key], prop, fn);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        var response, rewrite, host, registry;
+
+        response = request.response;
+        if (!response.isBoom &#x26;&#x26; response.variety === &#x27;plain&#x27;) {
+            host = util.hostInfo(request);
+            registry = Url.parse(response.headers[&#x27;x-registry&#x27;] || &#x27;&#x27;);
+            rewrite = util.rewriter(host, registry);
+            util.<span class="apidocCodeKeywordSpan">transform</span>(response.source, &#x27;tarball&#x27;, rewrite);
+        }
+
+        next();
+    });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.kappa.util.tryParse" id="apidoc.element.kappa.util.tryParse">
+        function <span class="apidocSignatureSpan">kappa.util.</span>tryParse
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tryParse(data) {
+    var obj;
+
+    try {
+        obj = JSON.parse(data);
+    }
+    catch (e) {
+        obj = e;
+    }
+
+    return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
